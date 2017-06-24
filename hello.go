@@ -1,5 +1,18 @@
 package main
 
+import (
+  "fmt"
+)
+
+func hello_v1() {
+  println("v1: Hello World from ffr!")
+}
+
+func hello_v2() {
+  fmt.Println("v2: Hello World from ffr!")
+}
+
 func main() {
-  println("Hello World from ffr!")
+  hello_v1()
+  hello_v2()
 }
