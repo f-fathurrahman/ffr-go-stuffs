@@ -9,6 +9,6 @@ func main() {
     c = 3
     str1 = "Hello ffr"
   )
-  fmt.Println(a, b, c, str1);
+  fmt.Println(a, b, c, str1)
 }
 
