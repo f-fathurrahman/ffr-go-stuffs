@@ -22,6 +22,8 @@ func serveStatic(w http.ResponseWriter, r *http.Request) {
 func main() {
   http.HandleFunc("/static", serveStatic)
   http.HandleFunc("/", serveDynamic)
+  fmt.Printf("Server starts at port localhost:8080\n")
+  fmt.Printf("Static files are at localhost:/static\n")
   http.ListenAndServe(Port, nil)
 }
 
