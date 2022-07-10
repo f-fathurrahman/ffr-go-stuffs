@@ -5,5 +5,5 @@ import "fmt"
 var f string = "Hello ffr"
 
 func main() {
-  fmt.Println("f = ", f)
+	fmt.Println("f = ", f)
 }

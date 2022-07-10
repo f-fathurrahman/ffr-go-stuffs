@@ -1,10 +1,10 @@
 package main
 
 import (
-  "fmt"
-  "runtime"
+	"fmt"
+	"runtime"
 )
 
 func main() {
-  fmt.Printf("This Go version: %s\n", runtime.Version())
+	fmt.Printf("This Go version: %s\n", runtime.Version())
 }
