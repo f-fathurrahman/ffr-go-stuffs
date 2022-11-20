@@ -291,4 +291,70 @@ func learnFlowControl() {
 
 love:
 	fmt.Println("This is love")
+
+	learnFunctionFactory()
+
+	learnDefer()
+
+	learnInterfaces()
+	
 }
+
+func learnFunctionFactory() {
+	// Next two are equivalent, with second being more practical
+	fmt.Println(sentenceFactory("summer")("A beautiful", "day!"))
+
+	d := sentenceFactory("summer")
+	fmt.Println(d("A beautiful", "day!"))
+	fmt.Println(d("A lazy", "afternoon!"))
+}
+
+// Decorators are common in other languages.
+// The same can be done in Go with function literals that accept arguments.
+func sentenceFactory(mystring string) func(before, after string) string {
+	return func(before, after string) string {
+		// this will return a new string
+		return fmt.Sprintf("%s %s %s", before, mystring, after)
+	}
+}
+
+
+func learnDefer() (ok bool) {
+	// A defer statement pushes a function call onto a list.
+	// The list of saved calls is executed AFTER the surrounding function returns.
+	defer fmt.Println("deferred statements execute in reverse (LIFO) order.")
+	// LIFO: last in first outputs
+	defer fmt.Println("\nThis line is being printed first because")
+	// Defer is commonly used to close a file, so the function closing the file
+	// stays close to the function opening the file
+	return true
+}
+
+
+// Define Stringer as an interface type with one method, String
+type Stringer interface {
+	String() string
+}
+
+// Define pair as a struct with two fields, int's named x and y
+type pair struct {
+	x, y int
+}
+
+// Define a method on type pair.
+// Pair now implements Stringer because Pair has defined all the methods
+// in the interface
+func (p pair) String() string {
+	// p is called the "receiver"
+	return fmt.Sprintf("(%d,%d)", p.x, p.y)
+}
+
+func learnInterfaces() {
+	// Brace syntax is a struct literal.
+	// It evaluates to an initialized struct.
+	// The := syntax declares and initializes p to this struct.
+	p := pair{3,4}
+	fmt.Println(p.String())
+}
+
+
