@@ -21,6 +21,11 @@ func main() {
 
 	kayak.price = 300
 	fmt.Println("Changed price: ", kayak.price)
-		
+
+	var lifejacket Product
+	fmt.Println("lifejacket.name = ", lifejacket.name)
+	fmt.Println("lifejacket.category = ", lifejacket.category)
+	fmt.Println("lifejacket.price = ", lifejacket.price)
+	
 }
 
