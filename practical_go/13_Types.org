@@ -1,0 +1,30 @@
+#+title: Tipe
+#+author: Maximilien Andile
+
+* Tipe Komposit
+
+  Pada bagian sebelumnya, kita telah menggunakan variabel dari tipe-tipe dasar.
+  Dengan menggunakan tipe-tipe dasar, kita dapat membuat tipe komposit, seperti:
+
+  - array
+  - pointer
+  - fungsi
+  - slices
+  - maps channels
+  - struct
+  - interfaces
+
+
+** Tipe Struct
+
+   Tipe
+
+#+begin_src go
+struct {
+	Name string
+	Capacity uint8
+	Rooms uint8
+	Smoking bool
+}
+#+end_src
+
